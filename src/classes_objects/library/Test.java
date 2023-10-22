@@ -2,6 +2,7 @@ package classes_objects.library;
 
 public class Test {
     public static void main(String[] args) {
+
         Book book = new Book();
         book.author = "Leo Tolstoy";
         book.title = "War and Peace";

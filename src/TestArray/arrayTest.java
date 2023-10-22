@@ -1,5 +1,7 @@
 package TestArray;
 
+import java.util.Arrays;
+
 public class arrayTest {
     public static void main(String[] args) {
 
@@ -13,7 +15,7 @@ public class arrayTest {
         sortWithoutZero(new int[]{0, 1, 9, 0, 3, 12, 0});
 
         //Наибольшая сумма подпоследовательности: Найти подмассив с наибольшей суммой в массиве целых чисел.
-        addSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4});
+        maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4});
 
         // Циклический сдвиг массива: Реализовать функцию, которая будет циклически сдвигать массив на n позиций вправ
         arrayShift(new int[]{1, 2, 3, 4, 5}, 2);
@@ -97,7 +99,7 @@ public class arrayTest {
         //Наибольшая сумма подпоследовательности: Найти подмассив с наибольшей суммой в массиве целых чисел.
         int sum = 0;
         int maxSum = 0;
-        String res = "";
+      
         for (int j = 0; j < nums.length; j++) {
             sum = 0;
             for (int k = j; k < nums.length; k++) {
@@ -153,6 +155,30 @@ public class arrayTest {
         System.out.println();
 
 
+    }
+    static void maxSubArray(int[] nums) {
+        int maxSum = 0;
+        int[] maxSubArray = new int[0];
+
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i; j < nums.length; j++) {
+                int currentSum = 0;
+                int[] currentSubArray = new int[j - i + 1];
+                int index = 0;
+
+                for (int k = i; k <= j; k++) {
+                    currentSum += nums[k];
+                    currentSubArray[index] = nums[k];
+                    index++;
+                }
+
+                if (currentSum > maxSum) {
+                    maxSum = currentSum;
+                    maxSubArray = currentSubArray;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(maxSubArray) + " с суммой " + maxSum);
     }
 }
 

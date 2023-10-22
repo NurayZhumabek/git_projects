@@ -1,6 +1,8 @@
 package classes_objects.library;
 
 public class Library {
+
+    Book books[];
     Book availableBook;
     void lendBook(Student student) {
      if(student.currentBorrowedBook ==null && availableBook!=null){
