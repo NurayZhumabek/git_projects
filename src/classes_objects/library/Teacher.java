@@ -1,13 +1,14 @@
 package classes_objects.library;
 
-public class Teacher {
+public class Teacher extends Person {
     String name;
     Subject subject;
     Book lastBorrowedBook;
     Book currentBorrowedBook;
 
+
+    @Override
     void display() {
-        System.out.println("Name: " + name + " subject: " + subject +
-                "\nThe last book: " + lastBorrowedBook + "\nThe current book: " + currentBorrowedBook);
+        super.display();
     }
 }

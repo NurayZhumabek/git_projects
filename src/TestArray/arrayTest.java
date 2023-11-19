@@ -52,7 +52,6 @@ public class arrayTest {
     static void subsequence(int[] nums) {
         int length = 1;
         int maxCount = 0;
-        String res = "";
         int start = 0;
         for (int j = 0; j < nums.length; j++) {
             length = 1;

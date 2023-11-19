@@ -1,6 +1,6 @@
 package classes_objects.library;
 
-public class Student {
+public class Student extends Person {
     String name;
     int studentID;
     Book borrowedBook;  // Каждый студент может взять только одну книгу
@@ -8,10 +8,10 @@ public class Student {
     Book currentBorrowedBook;
 
     // Метод вывода информации о студенте
+
+
+    @Override
     void display() {
-        System.out.println("Name: "+name+" student ID: " +studentID+
-                "\nThe last book: " + lastBorrowedBook + "\nThe current book: " + currentBorrowedBook);
-
-
+        super.display();
     }
 }

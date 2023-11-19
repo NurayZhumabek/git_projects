@@ -8,6 +8,5 @@ public class Person {
         System.out.println("Name: "+name+
                 "\nThe last book: " + lastBorrowedBook + "\nThe current book: " + currentBorrowedBook);
 
-
     }
 }
